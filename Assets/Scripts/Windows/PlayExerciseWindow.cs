@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FreeYoPRO : MonoBehaviour
+public class PlayExerciseWindow : MonoBehaviour
 {
 
     [SerializeField] private ThankWindow thankwindow;
+    [SerializeField] private Player player;    
+
     public Button adavance;
     public Button[] buttons;
     private string answer;
@@ -39,8 +41,6 @@ public class FreeYoPRO : MonoBehaviour
         }
         buttons[btnindex].GetComponent<Image>().enabled = true;
         buttons[btnindex].GetComponent<CheckButtonBehavior>().isChecked = true;
-        selectedBtn = btnindex;
-
     }
 
     private void GoToThankWindow()
@@ -48,16 +48,30 @@ public class FreeYoPRO : MonoBehaviour
 
         if (buttons[0].GetComponent<Image>().enabled == true)
         {
-            answer = "Yes";
+            answer = "1 ou 2 vezes";
+            player.playExercise = answer;
             thankwindow.Show();
-            Debug.Log(answer);
             Hide();
         }
         else if (buttons[1].GetComponent<Image>().enabled == true)
         {
-            answer = "No";
+            answer = "3 a 5 vezes";
+            player.playExercise = answer;
             thankwindow.Show();
-            Debug.Log(answer);
+            Hide();
+        }
+        else if (buttons[2].GetComponent<Image>().enabled == true)
+        {
+            answer = "+5 vezes";
+            player.playExercise = answer;
+            thankwindow.Show();
+            Hide();
+        }
+        else if (buttons[3].GetComponent<Image>().enabled == true)
+        {
+            answer = "Não pratico atividades físicas";
+            player.playExercise = answer;
+            thankwindow.Show();
             Hide();
         }
         else

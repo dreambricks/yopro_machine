@@ -12,8 +12,8 @@ public class Player: MonoBehaviour
     public string campaingName;
     public string brandName;
     public string alreadyDrink;
-    public string freeYopro;
-    public string date;
+    public string playExercise;
+    public string timePlayed;
 
     public Player() { }
 
@@ -23,11 +23,11 @@ public class Player: MonoBehaviour
         lastName = "";
         email = "";
         phone = "";
-        campaingName = "";
-        brandName = "";
+        campaingName = "Sampling e Formato Especial OOH";
+        brandName = "YoPro";
         alreadyDrink = "";
-        freeYopro = "";
-        date = "";
+        playExercise = "";
+        timePlayed = "";
     }
 
     public void Hide()

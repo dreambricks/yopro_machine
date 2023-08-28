@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class AlreadyDrinkWindow : MonoBehaviour
 {
 
-    [SerializeField] private FreeYoPRO freeyopro;
+    [SerializeField] private PlayExerciseWindow playExerciseWindow;
+    [SerializeField] private Player player;
+
     public Button adavance;
     public Button[] buttons;
     private string answer;
@@ -48,16 +50,16 @@ public class AlreadyDrinkWindow : MonoBehaviour
       
         if (buttons[0].GetComponent<Image>().enabled == true)
         {
-            answer = "Yes";
-            freeyopro.Show();
-            Debug.Log(answer);
+            answer = "Sim";
+            player.alreadyDrink = answer;
+            playExerciseWindow.Show();
             Hide();
         }
         else if (buttons[1].GetComponent<Image>().enabled == true)
         {
-            answer = "No";
-            freeyopro.Show();
-            Debug.Log(answer);
+            answer = "Não";
+            player.alreadyDrink = answer;
+            playExerciseWindow.Show();
             Hide();
         }
         else
