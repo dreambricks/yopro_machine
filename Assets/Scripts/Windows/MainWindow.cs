@@ -7,6 +7,7 @@ public class MainWindow : MonoBehaviour
 {
 
     [SerializeField] private TermsWindow termsWindow;
+    [SerializeField] private Player player;
     public Button advanceButton;
 
     void Start()
@@ -17,6 +18,7 @@ public class MainWindow : MonoBehaviour
     private void GoToTerms()
     {
         termsWindow.Show();
+        player.Show();
         Hide();
     }
 

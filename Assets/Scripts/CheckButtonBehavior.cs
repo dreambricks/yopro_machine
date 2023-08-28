@@ -10,7 +10,7 @@ public class CheckButtonBehavior : MonoBehaviour
 
     private void Start()
     {
-        toggle.onClick.AddListener(() => OnCheck());
+     
     }
     private void OnEnable()
     {

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TermsWindow termsWindow;
     [SerializeField] private RegisterWindow registerWindow;
     [SerializeField] private AlreadyDrinkWindow alreadyDrink;
-    [SerializeField] private SportsWindow sportsWindow;
+    [SerializeField] private FreeYoPRO freeyoproWindow;
     [SerializeField] private ThankWindow thankWindow;
 
     private void Start()
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
         termsWindow.Hide();
         registerWindow.Hide();
         alreadyDrink.Hide();
-        sportsWindow.Hide();
+        freeyoproWindow.Hide();
         thankWindow.Hide();
     }
 }

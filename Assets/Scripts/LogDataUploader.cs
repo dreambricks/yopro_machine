@@ -68,11 +68,8 @@ public class LogDataUploader : MonoBehaviour
         string json = File.ReadAllText(fullPath);
         var dataLog = JsonConvert.DeserializeObject<DataLog>(json);
 
-        form.AddField("barName", dataLog.barName);
         form.AddField("timePlayed", dataLog.timePlayed);
         form.AddField("status", dataLog.status);
-        form.AddField("hits", dataLog.hits);
-        form.AddField("miss", dataLog.miss);
 
         // Crie uma requisicao UnityWebRequest para enviar o arquivo
         using (UnityWebRequest www = UnityWebRequest.Post(uploadURL, form))

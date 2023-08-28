@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThankWindow : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    [SerializeField] private MainWindow mainWindow;
+    [SerializeField] private Player player;
+    public Button finalize;
+
     void Start()
     {
-        
+        finalize.onClick.AddListener(()=> GoToMainWindow());
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void GoToMainWindow()
     {
-        
+        player.Hide();
+        mainWindow.Show();
+        Hide();
     }
 
     public void Hide()

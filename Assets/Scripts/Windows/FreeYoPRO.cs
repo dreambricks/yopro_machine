@@ -3,20 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AlreadyDrinkWindow : MonoBehaviour
+public class FreeYoPRO : MonoBehaviour
 {
 
-    [SerializeField] private FreeYoPRO freeyopro;
+    [SerializeField] private ThankWindow thankwindow;
     public Button adavance;
     public Button[] buttons;
     private string answer;
     private int selectedBtn;
     public Text error;
-
-    private void OnEnable()
-    {
-        error.gameObject.SetActive(false);
-    }
 
 
     void Start()
@@ -28,6 +23,11 @@ public class AlreadyDrinkWindow : MonoBehaviour
             int buttonIndex = i;
             buttons[i].onClick.AddListener(() => Check(buttonIndex));
         }
+    }
+
+    private void OnEnable()
+    {
+        error.gameObject.SetActive(false);
     }
 
     private void Check(int btnindex)
@@ -45,18 +45,18 @@ public class AlreadyDrinkWindow : MonoBehaviour
 
     private void GoToThankWindow()
     {
-      
+
         if (buttons[0].GetComponent<Image>().enabled == true)
         {
             answer = "Yes";
-            freeyopro.Show();
+            thankwindow.Show();
             Debug.Log(answer);
             Hide();
         }
         else if (buttons[1].GetComponent<Image>().enabled == true)
         {
             answer = "No";
-            freeyopro.Show();
+            thankwindow.Show();
             Debug.Log(answer);
             Hide();
         }
@@ -78,3 +78,4 @@ public class AlreadyDrinkWindow : MonoBehaviour
         gameObject.SetActive(true);
     }
 }
+
