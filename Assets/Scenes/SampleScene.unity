@@ -494,10 +494,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06b39c97cf652ff4bb3f617565c7a1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainWindow: {fileID: 250084054}
+  cTAWindow: {fileID: 2075986209}
   registerWindow: {fileID: 1438977634}
   accept: {fileID: 125460867}
   refuse: {fileID: 934890435}
+  totalTime: 15
 --- !u!1 &156200291
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +819,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   termsWindow: {fileID: 136967238}
   player: {fileID: 309521240}
+  cTAWindow: {fileID: 2075986209}
   advanceButton: {fileID: 734992441}
+  totalTime: 10
 --- !u!1 &261450856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1707,7 @@ MonoBehaviour:
   alreadyDrink: {fileID: 1847940027}
   playExerciseWindow: {fileID: 2029501943}
   thankWindow: {fileID: 896555710}
-  cTAQWindow: {fileID: 2075986209}
+  cTAWindow: {fileID: 2075986209}
 --- !u!1 &625302936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,7 +2344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &896555709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2378,6 +2381,7 @@ MonoBehaviour:
   ctaWindow: {fileID: 2075986209}
   player: {fileID: 309521240}
   finalize: {fileID: 760109479}
+  totalTime: 25
 --- !u!1 &903436143
 GameObject:
   m_ObjectHideFlags: 0
@@ -3596,6 +3600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alreadyDrinkWindow: {fileID: 1847940027}
   player: {fileID: 309521240}
+  cTAWindow: {fileID: 2075986209}
   firstName: {fileID: 1009072341}
   email: {fileID: 958106637}
   phone: {fileID: 1706758023}
@@ -3603,6 +3608,7 @@ MonoBehaviour:
   isValidPhoneTxt: {fileID: 1170351984}
   errorTxt: {fileID: 1809482547}
   advance: {fileID: 2130951643}
+  totalTime: 45
 --- !u!1 &1482878270
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,11 +4347,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playExerciseWindow: {fileID: 2029501943}
   player: {fileID: 309521240}
+  cTAWindow: {fileID: 2075986209}
   adavance: {fileID: 2045316445}
   buttons:
   - {fileID: 872387680}
   - {fileID: 2131515219}
   error: {fileID: 376438970}
+  totalTime: 25
 --- !u!1 &1873176092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5102,6 +5110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thankwindow: {fileID: 896555710}
+  cTAWindow: {fileID: 2075986209}
   player: {fileID: 309521240}
   adavance: {fileID: 42995994}
   buttons:
@@ -5110,6 +5119,7 @@ MonoBehaviour:
   - {fileID: 1678094470}
   - {fileID: 1873176095}
   error: {fileID: 625302938}
+  totalTime: 25
 --- !u!1 &2045316443
 GameObject:
   m_ObjectHideFlags: 0

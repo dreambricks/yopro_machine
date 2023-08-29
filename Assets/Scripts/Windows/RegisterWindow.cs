@@ -9,6 +9,7 @@ public class RegisterWindow : MonoBehaviour
 {
     [SerializeField] private AlreadyDrinkWindow alreadyDrinkWindow;
     [SerializeField] private Player player;
+    [SerializeField] private CTAWindow cTAWindow;
 
     public InputField firstName;
     public InputField email;
@@ -23,6 +24,9 @@ public class RegisterWindow : MonoBehaviour
 
     public Button advance;
 
+    public float totalTime = 45;
+    private float currentTime;
+
     private void Start()
     {
         advance.onClick.AddListener(()=> GetRegisterData());
@@ -32,6 +36,8 @@ public class RegisterWindow : MonoBehaviour
 
     private void OnEnable()
     {
+        currentTime = totalTime;
+
         isValidEmailTxt.gameObject.SetActive(false);
         isValidPhoneTxt.gameObject.SetActive(false);
         errorTxt.gameObject.SetActive(false);
@@ -43,6 +49,24 @@ public class RegisterWindow : MonoBehaviour
 
         isValidEmail = false;
         isValidPhone = false;
+    }
+
+    private void Update()
+    {
+        Countdown();
+    }
+
+    public void Countdown()
+    {
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            cTAWindow.Show();
+            WindowTimer.SendLog(StatusEnum.CadastroNaoConcluido);
+            Hide();
+        }
     }
 
     private void GoToAleadyDrink()

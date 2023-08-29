@@ -5,20 +5,49 @@ using UnityEngine.UI;
 
 public class TermsWindow : MonoBehaviour
 {
-    [SerializeField] private MainWindow mainWindow;
+    [SerializeField] private CTAWindow cTAWindow;
     [SerializeField] private RegisterWindow registerWindow;
+
     public Button accept;
     public Button refuse;
+
+    public float totalTime = 15;
+    private float currentTime;
+
     void Start()
     {
         accept.onClick.AddListener(()=> GotoRegisterWindow());
-        refuse.onClick.AddListener(()=> GoToMainWindow());
+        refuse.onClick.AddListener(()=> GoToCTAWindow());
+    }
+
+    private void OnEnable()
+    {
+        currentTime = totalTime;
+    }
+
+    private void Update()
+    {
+        Countdown();
+    }
+
+    public void Countdown()
+    {
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            cTAWindow.Show();
+            WindowTimer.SendLog(StatusEnum.TermosNaoAceito);
+            Hide();
+        }
     }
 
 
-    private void GoToMainWindow()
+    private void GoToCTAWindow()
     {
-        mainWindow.Show();
+        cTAWindow.Show();
+        WindowTimer.SendLog(StatusEnum.TermosNaoAceito);
         Hide();
     }
 

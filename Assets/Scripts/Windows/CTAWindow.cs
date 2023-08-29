@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CTAQWindow : MonoBehaviour
+public class CTAWindow : MonoBehaviour
 {
 
     [SerializeField] MainWindow mainWindow;

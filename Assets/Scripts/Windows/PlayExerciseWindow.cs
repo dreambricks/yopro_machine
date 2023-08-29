@@ -7,13 +7,17 @@ public class PlayExerciseWindow : MonoBehaviour
 {
 
     [SerializeField] private ThankWindow thankwindow;
-    [SerializeField] private Player player;    
+    [SerializeField] private CTAWindow cTAWindow;
+    [SerializeField] private Player player;
 
     public Button adavance;
     public Button[] buttons;
     private string answer;
     private int selectedBtn;
     public Text error;
+
+    public float totalTime = 25;
+    private float currentTime;
 
 
     void Start()
@@ -29,7 +33,27 @@ public class PlayExerciseWindow : MonoBehaviour
 
     private void OnEnable()
     {
+        currentTime = totalTime;
+
         error.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        Countdown();
+    }
+
+    public void Countdown()
+    {
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            cTAWindow.Show();
+            WindowTimer.SendLog(StatusEnum.ParouEmQtdExercicios);
+            Hide();
+        }
     }
 
     private void Check(int btnindex)

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ThankWindow : MonoBehaviour
 {
 
-    [SerializeField] private CTAQWindow ctaWindow;
+    [SerializeField] private CTAWindow ctaWindow;
     [SerializeField] private Player player;
     public Button finalize;
 
@@ -17,6 +17,10 @@ public class ThankWindow : MonoBehaviour
     private string fileName;
     private string stringEncrypted;
 
+
+    public float totalTime = 25;
+    private float currentTime;
+
     void Start()
     {
         finalize.onClick.AddListener(()=> GoToMainWindow());
@@ -24,12 +28,33 @@ public class ThankWindow : MonoBehaviour
 
     private void OnEnable()
     {
+        currentTime = totalTime;
+
         EncryptData();
+    }
+
+    private void Update()
+    {
+        Countdown();
+    }
+
+    public void Countdown()
+    {
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            ctaWindow.Show();
+            WindowTimer.SendLog(StatusEnum.AcaoConcluida);
+            Hide();
+        }
     }
 
     private void GoToMainWindow()
     {
         player.Hide();
+        WindowTimer.SendLog(StatusEnum.AcaoConcluida);
         ctaWindow.Show();
         Hide();
     }

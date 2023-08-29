@@ -8,6 +8,7 @@ public class AlreadyDrinkWindow : MonoBehaviour
 
     [SerializeField] private PlayExerciseWindow playExerciseWindow;
     [SerializeField] private Player player;
+    [SerializeField] private CTAWindow cTAWindow;
 
     public Button adavance;
     public Button[] buttons;
@@ -15,11 +16,15 @@ public class AlreadyDrinkWindow : MonoBehaviour
     private int selectedBtn;
     public Text error;
 
+    public float totalTime = 25;
+    private float currentTime;
+
     private void OnEnable()
     {
+        currentTime = totalTime;
+
         error.gameObject.SetActive(false);
     }
-
 
     void Start()
     {
@@ -29,6 +34,24 @@ public class AlreadyDrinkWindow : MonoBehaviour
         {
             int buttonIndex = i;
             buttons[i].onClick.AddListener(() => Check(buttonIndex));
+        }
+    }
+
+    private void Update()
+    {
+        Countdown();
+    }
+
+    public void Countdown()
+    {
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            cTAWindow.Show();
+            WindowTimer.SendLog(StatusEnum.ParouEmJaTomouYoPRO);
+            Hide();
         }
     }
 

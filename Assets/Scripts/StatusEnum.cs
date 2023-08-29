@@ -1,8 +1,9 @@
 
 public enum StatusEnum 
 {
-    MenorDeIdade,
+    TermosNaoAceito,
     CadastroNaoConcluido,
-    CadastroConcluidoNaoJogou,
-    CadastroConcluidoJogou, 
+    ParouEmJaTomouYoPRO,
+    ParouEmQtdExercicios,
+    AcaoConcluida
 }
