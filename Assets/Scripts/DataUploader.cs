@@ -58,7 +58,6 @@ public class DataUploader : MonoBehaviour
 
     virtual protected IEnumerator SendData(string filename)
     {
-        string barName = BarConfig.LoadBarName();
 
         // Crie um objeto WWWForm para armazenar o arquivo
         WWWForm form = new WWWForm();
@@ -68,7 +67,6 @@ public class DataUploader : MonoBehaviour
         // Carregue o arquivo binario
         byte[] fileData = System.IO.File.ReadAllBytes(fullPath);
         form.AddBinaryData("file", fileData, filename);
-        form.AddField("nomeBar", barName);
 
         // Crie uma requisicao UnityWebRequest para enviar o arquivo
         using (UnityWebRequest www = UnityWebRequest.Post(uploadURL, form))

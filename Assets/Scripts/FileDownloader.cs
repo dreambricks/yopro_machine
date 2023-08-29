@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class FileDownloader : MonoBehaviour
 {
-    private string fileURL = "https://dreambricks.com.br/files/hnk/public_key.xml"; // Substitua pelo URL do arquivo desejado
+    public string fileURL;
 
     private void Start()
     {
