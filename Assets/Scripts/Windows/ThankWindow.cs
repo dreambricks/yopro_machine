@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ThankWindow : MonoBehaviour
 {
 
-    [SerializeField] private MainWindow mainWindow;
+    [SerializeField] private CTAQWindow ctaWindow;
     [SerializeField] private Player player;
     public Button finalize;
 
@@ -30,7 +30,7 @@ public class ThankWindow : MonoBehaviour
     private void GoToMainWindow()
     {
         player.Hide();
-        mainWindow.Show();
+        ctaWindow.Show();
         Hide();
     }
 

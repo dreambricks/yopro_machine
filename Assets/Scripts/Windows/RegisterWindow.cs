@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +11,6 @@ public class RegisterWindow : MonoBehaviour
     [SerializeField] private Player player;
 
     public InputField firstName;
-    public InputField lastName;
     public InputField email;
     public InputField phone;
 
@@ -38,7 +38,6 @@ public class RegisterWindow : MonoBehaviour
 
 
         firstName.text = "";
-        lastName.text = "";
         email.text = "";
         phone.text = "";
 
@@ -55,12 +54,13 @@ public class RegisterWindow : MonoBehaviour
     private void GetRegisterData()
     {
   
-        if (isValidEmail && isValidPhone && firstName.text != "" && lastName.text != "" )
+        if (isValidEmail && isValidPhone && firstName.text != "" )
         {
             player.firstName = firstName.text;
-            player.lastName = lastName.text;
+            string[] names = firstName.text.Split(" ");
+            player.lastName = names.Last();
             player.email = email.text;
-            player.phone = phone.text;
+            player.phone = phone.text.Replace("(","").Replace(")", " ").Replace("-", " ");
 
             GoToAleadyDrink();
         }
@@ -108,7 +108,7 @@ public class RegisterWindow : MonoBehaviour
 
     public static bool IsPhoneValid(string phone)
     {
-        string pattern = @"^\d{2} \d{5} \d{4}$";
+        string pattern = @"^\(\d{2}\)\d{5}\-\d{4}$";
 
         bool isMatch = Regex.IsMatch(phone, pattern);
 

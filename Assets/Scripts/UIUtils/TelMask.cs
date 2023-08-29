@@ -27,7 +27,7 @@ public class TelMask : MonoBehaviour
     private string ApplyDateMask(string input)
     {
         string cleanedInput = Regex.Replace(input, @"[^\d]", "");
-        string formattedInput = Regex.Replace(cleanedInput, @"^(\d{2})(\d{5})(\d{4}).*", "$1 $2 $3");
+        string formattedInput = Regex.Replace(cleanedInput, @"^(\d{2})(\d{5})(\d{4}).*", "($1)$2-$3");
         return formattedInput;
     }
 

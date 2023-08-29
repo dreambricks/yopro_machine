@@ -11,10 +11,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AlreadyDrinkWindow alreadyDrink;
     [SerializeField] private PlayExerciseWindow playExerciseWindow;
     [SerializeField] private ThankWindow thankWindow;
+    [SerializeField] private CTAQWindow cTAQWindow;
 
     private void Start()
     {
-        mainWindow.Show();
+        cTAQWindow.Show();
+        mainWindow.Hide();
         termsWindow.Hide();
         registerWindow.Hide();
         alreadyDrink.Hide();
