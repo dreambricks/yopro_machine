@@ -2720,6 +2720,7 @@ GameObject:
   - component: {fileID: 958106639}
   - component: {fileID: 958106638}
   - component: {fileID: 958106637}
+  - component: {fileID: 958106640}
   m_Layer: 5
   m_Name: Email(InputField)
   m_TagString: Untagged
@@ -2805,7 +2806,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 958106640}
+        m_TargetAssemblyTypeName: VirtualKeyboard, Assembly-CSharp
+        m_MethodName: HideTouchKeyboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2855,6 +2868,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 958106635}
   m_CullTransparentMesh: 1
+--- !u!114 &958106640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958106635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4edde361a74034da1fe1a4bf553c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1009072339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2867,6 +2892,7 @@ GameObject:
   - component: {fileID: 1009072343}
   - component: {fileID: 1009072342}
   - component: {fileID: 1009072341}
+  - component: {fileID: 1009072344}
   m_Layer: 5
   m_Name: FirstName(InputField)
   m_TagString: Untagged
@@ -2952,7 +2978,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1009072344}
+        m_TargetAssemblyTypeName: VirtualKeyboard, Assembly-CSharp
+        m_MethodName: HideTouchKeyboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3002,6 +3040,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009072339}
   m_CullTransparentMesh: 1
+--- !u!114 &1009072344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009072339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4edde361a74034da1fe1a4bf553c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1011192266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3609,7 +3659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1438977633
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3653,7 +3703,7 @@ MonoBehaviour:
   isValidPhoneTxt: {fileID: 1170351984}
   errorTxt: {fileID: 1809482547}
   advance: {fileID: 2130951643}
-  totalTime: 45
+  totalTime: 120
 --- !u!1 &1482878270
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,6 +4177,7 @@ GameObject:
   - component: {fileID: 1706758024}
   - component: {fileID: 1706758023}
   - component: {fileID: 1706758026}
+  - component: {fileID: 1706758027}
   m_Layer: 5
   m_Name: Phone(InputField)
   m_TagString: Untagged
@@ -4212,7 +4263,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1706758027}
+        m_TargetAssemblyTypeName: VirtualKeyboard, Assembly-CSharp
+        m_MethodName: HideTouchKeyboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4275,6 +4338,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputField: {fileID: 1706758023}
+--- !u!114 &1706758027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706758021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4edde361a74034da1fe1a4bf553c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1734779335
 GameObject:
   m_ObjectHideFlags: 0

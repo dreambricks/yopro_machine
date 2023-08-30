@@ -24,7 +24,7 @@ public class RegisterWindow : MonoBehaviour
 
     public Button advance;
 
-    public float totalTime = 45;
+    public float totalTime = 120;
     private float currentTime;
 
     private void Start()
