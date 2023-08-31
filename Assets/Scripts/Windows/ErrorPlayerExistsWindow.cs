@@ -10,7 +10,7 @@ public class ErrorPlayerExistsWindow : MonoBehaviour
     public Button backBtn;
     [SerializeField] private CTAWindow ctaWindow;
 
-    public float totalTime = 25;
+    public float totalTime = 10;
     private float currentTime;
 
     // Start is called before the first frame update

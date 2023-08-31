@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.IO;
 using System.Xml;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class ThankWindow : MonoBehaviour
@@ -31,6 +33,8 @@ public class ThankWindow : MonoBehaviour
         currentTime = totalTime;
 
         EncryptData();
+
+        StartCoroutine(RunMachine());
     }
 
     private void Update()
@@ -139,5 +143,24 @@ public class ThankWindow : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
+    }
+
+    IEnumerator RunMachine()
+    {
+        string url = "http://localhost/dispensegift"; // Substitua pela URL desejada
+
+        using (UnityWebRequest www = UnityWebRequest.Get(url))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.Log($"Error: {www.error}");
+            }
+            else
+            {
+                Debug.Log($"Received: {www.downloadHandler.text}");
+            }
+        }
     }
 }
