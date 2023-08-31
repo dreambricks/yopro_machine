@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayExerciseWindow playExerciseWindow;
     [SerializeField] private ThankWindow thankWindow;
     [SerializeField] private CTAWindow cTAWindow;
+    [SerializeField] private ErrorPlayerExistsWindow errorPlayerExistsWindow;
 
     private void Start()
     {
@@ -22,5 +23,6 @@ public class GameManager : MonoBehaviour
         alreadyDrink.Hide();
         playExerciseWindow.Hide();
         thankWindow.Hide();
+        errorPlayerExistsWindow.Hide();
     }
 }

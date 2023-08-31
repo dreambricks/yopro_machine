@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class RegisterWindow : MonoBehaviour
@@ -10,6 +12,7 @@ public class RegisterWindow : MonoBehaviour
     [SerializeField] private AlreadyDrinkWindow alreadyDrinkWindow;
     [SerializeField] private Player player;
     [SerializeField] private CTAWindow cTAWindow;
+    [SerializeField] private ErrorPlayerExistsWindow errorPlayerExistsWindow;
 
     public InputField firstName;
     public InputField email;
@@ -25,6 +28,8 @@ public class RegisterWindow : MonoBehaviour
     public Button advance;
 
     public float totalTime = 120;
+    public string urlExists;
+    private bool resultExists;
     private float currentTime;
 
     private void Start()
@@ -80,13 +85,17 @@ public class RegisterWindow : MonoBehaviour
   
         if (isValidEmail && isValidPhone && firstName.text != "" )
         {
-            player.firstName = firstName.text;
-            string[] names = firstName.text.Split(" ");
-            player.lastName = names.Last();
+            string fullName = firstName.text;
+            string[] nameParts = fullName.Split(' ');
+
+            player.firstName = string.Join(" ", nameParts, 0, nameParts.Length - 1);
+            player.lastName = nameParts[nameParts.Length - 1];
+
             player.email = email.text;
             player.phone = phone.text.Replace("(","").Replace(")", " ").Replace("-", " ");
 
-            GoToAleadyDrink();
+            StartCoroutine(CheckIfExists());
+
         }
         else
         {
@@ -158,4 +167,42 @@ public class RegisterWindow : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+
+    IEnumerator CheckIfExists()
+    {
+        string fullUrl = urlExists + player.phone.GetHashCode();
+        Debug.Log(fullUrl);
+        using (UnityWebRequest www = UnityWebRequest.Get(fullUrl))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError($"Error: {www.error}");
+            }
+            else
+            {
+
+                bool result = bool.Parse(www.downloadHandler.text);
+                Debug.Log("RETORNOU " + result);
+                if (result)
+                {
+                    Debug.Log("Server returned true, executing another method...");
+                    ExecuteMethodIfTrue();
+                }
+                else
+                {
+                    GoToAleadyDrink();
+                }
+            }
+        }
+    }
+
+
+    private void ExecuteMethodIfTrue()
+    {
+        errorPlayerExistsWindow.Show();
+        Hide();
+    }
+    
 }

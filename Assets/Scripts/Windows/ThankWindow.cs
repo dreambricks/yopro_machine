@@ -100,7 +100,9 @@ public class ThankWindow : MonoBehaviour
             Directory.CreateDirectory(folderOutput);
         }
 
-        fileName = string.Format("{0}.enc", formattedDateTime);
+        string telHash = player.phone.GetHashCode().ToString();
+
+        fileName = string.Format("{0}_{1}.enc", telHash, formattedDateTime);
 
         string fullPath = Path.Combine(folderOutput, fileName);
         Debug.Log(fullPath);
