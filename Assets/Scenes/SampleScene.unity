@@ -2151,7 +2151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542687771c222914badbd2d002fef40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileURL: https://dreambricks.com.br/files/hnk/public_key.xml
+  fileURL: https://dreambricks.com.br/files/danone/public_key.xml
 --- !u!4 &639126057
 Transform:
   m_ObjectHideFlags: 0
@@ -4730,7 +4730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputFolder: data_logs
   backupFolder: data_logs_backup
-  uploadURL: http://localhost:8080/api/datalogs/upload
+  uploadURL: http://15.229.14.115:8080/api/datalogs/upload
   checkIntervalSeconds: 120
 --- !u!1 &1678094467
 GameObject:
@@ -6436,7 +6436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outputFolder: user_data
   backupFolder: user_data_backup
-  uploadURL: http://localhost:8080/api/players/upload
+  uploadURL: http://15.229.14.115:8080/api/players/upload
   checkIntervalSeconds: 120
 --- !u!4 &2116959601
 Transform:
