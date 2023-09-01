@@ -16,7 +16,7 @@ public class PlayExerciseWindow : MonoBehaviour
     private int selectedBtn;
     public Text error;
 
-    public float totalTime = 25;
+    public float totalTime = 35;
     private float currentTime;
 
 

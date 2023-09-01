@@ -12,7 +12,7 @@ public class MainWindow : MonoBehaviour
 
     public Button advanceButton;
 
-    public float totalTime = 10;
+    public float totalTime = 20;
     private float currentTime;
 
     private void OnEnable()

@@ -11,7 +11,7 @@ public class TermsWindow : MonoBehaviour
     public Button accept;
     public Button refuse;
 
-    public float totalTime = 15;
+    public float totalTime = 40;
     private float currentTime;
 
     void Start()

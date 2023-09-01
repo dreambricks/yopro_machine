@@ -27,7 +27,7 @@ public class RegisterWindow : MonoBehaviour
 
     public Button advance;
 
-    public float totalTime = 120;
+    public float totalTime = 180;
     public string urlExists;
     private bool resultExists;
     private float currentTime;

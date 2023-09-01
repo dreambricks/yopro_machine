@@ -10,7 +10,6 @@ public class CheckWork : MonoBehaviour
 
     public int checkIntervalSeconds;
     public string apiUrl;
-    public string testResult;
 
     private void Start()
     {

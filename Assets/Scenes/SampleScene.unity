@@ -359,7 +359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248, y: -387}
+  m_AnchoredPosition: {x: -640, y: -387}
   m_SizeDelta: {x: 418.7485, y: 141.0547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125460867
@@ -498,7 +498,7 @@ MonoBehaviour:
   registerWindow: {fileID: 1438977634}
   accept: {fileID: 125460867}
   refuse: {fileID: 934890435}
-  totalTime: 15
+  totalTime: 40
 --- !u!1 &156200291
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +689,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167377276}
   m_CullTransparentMesh: 1
+--- !u!1 &216927544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216927545}
+  - component: {fileID: 216927547}
+  - component: {fileID: 216927546}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &216927545
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216927544}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2054813763}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 760.3374, y: -396.06537}
+  m_SizeDelta: {x: 170.28, y: 172.4656}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &216927546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216927544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 963837443fde8c749bb3e2b1acb0d770, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &216927547
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216927544}
+  m_CullTransparentMesh: 1
 --- !u!1 &235512643
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,7 +899,7 @@ MonoBehaviour:
   player: {fileID: 309521240}
   cTAWindow: {fileID: 2075986209}
   advanceButton: {fileID: 734992441}
-  totalTime: 10
+  totalTime: 20
 --- !u!1 &261450856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,7 +1253,6 @@ MonoBehaviour:
   notWorkingWindow: {fileID: 1403914621}
   checkIntervalSeconds: 120
   apiUrl: http://localhost/working
-  testResult: 
 --- !u!4 &304410387
 Transform:
   m_ObjectHideFlags: 0
@@ -2926,7 +3001,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260, y: -387}
+  m_AnchoredPosition: {x: -102, y: -387}
   m_SizeDelta: {x: 418.7485, y: 141.0547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934890435
@@ -3096,13 +3171,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 958106638}
   m_TextComponent: {fileID: 1934226192}
   m_Placeholder: {fileID: 1482878272}
-  m_ContentType: 0
+  m_ContentType: 6
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 7
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
@@ -4130,7 +4205,7 @@ MonoBehaviour:
   isValidPhoneTxt: {fileID: 1170351984}
   errorTxt: {fileID: 1809482547}
   advance: {fileID: 2130951643}
-  totalTime: 120
+  totalTime: 180
   urlExists: http://localhost:8080/api/players/exists/
 --- !u!1 &1482878270
 GameObject:
@@ -5105,7 +5180,7 @@ MonoBehaviour:
   - {fileID: 872387680}
   - {fileID: 2131515219}
   error: {fileID: 376438970}
-  totalTime: 25
+  totalTime: 35
 --- !u!1 &1873176092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,7 +5946,7 @@ MonoBehaviour:
   - {fileID: 1678094470}
   - {fileID: 1873176095}
   error: {fileID: 625302938}
-  totalTime: 25
+  totalTime: 35
 --- !u!1 &2045316443
 GameObject:
   m_ObjectHideFlags: 0
@@ -6026,6 +6101,7 @@ RectTransform:
   m_Children:
   - {fileID: 125460866}
   - {fileID: 934890434}
+  - {fileID: 216927545}
   m_Father: {fileID: 136967237}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6054,7 +6130,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 66563112fbce5374a845a16ff247560e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3184f4c36ec511e48bb232850026272a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
