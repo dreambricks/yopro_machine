@@ -82,17 +82,24 @@ public class RegisterWindow : MonoBehaviour
 
     private void GetRegisterData()
     {
-  
-        if (isValidEmail && isValidPhone && firstName.text != "" )
+
+        if (isValidEmail && isValidPhone && firstName.text != "")
         {
             string fullName = firstName.text;
             string[] nameParts = fullName.Split(' ');
 
-            player.firstName = string.Join(" ", nameParts, 0, nameParts.Length - 1);
-            player.lastName = nameParts[nameParts.Length - 1];
+            if (nameParts.Length == 1)
+            {
+                player.firstName = nameParts[0];
+            }
+            else
+            {
+                player.firstName = string.Join(" ", nameParts, 0, nameParts.Length - 1);
+                player.lastName = nameParts[nameParts.Length - 1];
+            }
 
             player.email = email.text;
-            player.phone = phone.text.Replace("(","").Replace(")", " ").Replace("-", " ");
+            player.phone = phone.text.Replace("(", "").Replace(")", " ").Replace("-", " ");
 
             CheckPlayer();
         }

@@ -7,9 +7,11 @@ public class CheckWork : MonoBehaviour
 {
     [SerializeField] private CTAWindow ctaWindow;
     [SerializeField] private NotWorkingWindow notWorkingWindow;
+    [SerializeField] private MaintWindow maintWindow;
 
     public int checkIntervalSeconds;
     public string apiUrl;
+    public string response;
 
     private void Start()
     {
@@ -34,7 +36,7 @@ public class CheckWork : MonoBehaviour
                 }
                 else
                 {
-                    string response = www.downloadHandler.text;
+                    response = www.downloadHandler.text;
                     Debug.Log("Resposta da API: " + response);
 
                     if (response == "yes")
@@ -45,13 +47,16 @@ public class CheckWork : MonoBehaviour
                     {
                         ExecuteMethodIfNo();
                     }
+                    else if (response == "maint")
+                    {
+                        ExecuteMethodIfMaint();
+                    }
                     else
                     {
                         Debug.LogWarning("Resposta não reconhecida: " + response);
                     }
                 }
             }
-
         }
     }
 
@@ -59,11 +64,20 @@ public class CheckWork : MonoBehaviour
     {
         ctaWindow.Show();
         notWorkingWindow.Hide();
+        maintWindow.Hide();
     }
 
     private void ExecuteMethodIfNo()
     {
         notWorkingWindow.Show();
+        ctaWindow.Hide();
+        maintWindow.Hide();
+    }
+
+    private void ExecuteMethodIfMaint()
+    {
+        maintWindow.Show();
+        notWorkingWindow.Hide();
         ctaWindow.Hide();
     }
 }

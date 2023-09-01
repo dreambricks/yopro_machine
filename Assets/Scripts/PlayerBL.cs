@@ -51,7 +51,6 @@ public class PlayerBL
         {
             return null;
         }
-        Debug.Log("Passouaqui");
 
         string filepath = Path.Combine(folderJson, "PlayerBL");
 
