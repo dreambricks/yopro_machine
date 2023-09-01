@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.IO;
@@ -105,6 +106,20 @@ public class ThankWindow : MonoBehaviour
         }
 
         string telHash = player.phone.GetHashCode().ToString();
+
+        PlayerBL playerbl = PlayerBL.LoadFromJson();
+
+        if (playerbl != null)
+        {
+            playerbl.AddTelList(telHash);
+            PlayerBL.SaveToJson(playerbl);
+        }
+        else
+        {
+            PlayerBL playerblnew = new PlayerBL();
+            playerblnew.AddTelList(telHash);
+            PlayerBL.SaveToJson(playerblnew);
+        }
 
         fileName = string.Format("{0}_{1}.enc", telHash, formattedDateTime);
 

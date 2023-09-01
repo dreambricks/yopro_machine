@@ -94,13 +94,34 @@ public class RegisterWindow : MonoBehaviour
             player.email = email.text;
             player.phone = phone.text.Replace("(","").Replace(")", " ").Replace("-", " ");
 
-            StartCoroutine(CheckIfExists());
-
+            CheckPlayer();
         }
         else
         {
             StartCoroutine(ShowErrorText());
         }
+    }
+
+    private void CheckPlayer()
+    {
+        PlayerBL playerbl = PlayerBL.LoadFromJson();
+
+        if (playerbl != null)
+        {
+            if (playerbl.telHash.Contains(player.phone.GetHashCode().ToString()))
+            {
+                ExecuteMethodIfTrue();
+            }
+            else
+            {
+                GoToAleadyDrink();
+            }
+        }
+        else
+        {
+            GoToAleadyDrink();
+        }
+
     }
 
     private IEnumerator ShowErrorText()
@@ -168,35 +189,35 @@ public class RegisterWindow : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    IEnumerator CheckIfExists()
-    {
-        string fullUrl = urlExists + player.phone.GetHashCode();
-        Debug.Log(fullUrl);
-        using (UnityWebRequest www = UnityWebRequest.Get(fullUrl))
-        {
-            yield return www.SendWebRequest();
+    //IEnumerator CheckIfExists()
+    //{
+    //    string fullUrl = urlExists + player.phone.GetHashCode();
+    //    Debug.Log(fullUrl);
+    //    using (UnityWebRequest www = UnityWebRequest.Get(fullUrl))
+    //    {
+    //        yield return www.SendWebRequest();
 
-            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-            {
-                Debug.LogError($"Error: {www.error}");
-            }
-            else
-            {
+    //        if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+    //        {
+    //            Debug.LogError($"Error: {www.error}");
+    //        }
+    //        else
+    //        {
 
-                bool result = bool.Parse(www.downloadHandler.text);
-                Debug.Log("RETORNOU " + result);
-                if (result)
-                {
-                    Debug.Log("Server returned true, executing another method...");
-                    ExecuteMethodIfTrue();
-                }
-                else
-                {
-                    GoToAleadyDrink();
-                }
-            }
-        }
-    }
+    //            bool result = bool.Parse(www.downloadHandler.text);
+    //            Debug.Log("RETORNOU " + result);
+    //            if (result)
+    //            {
+    //                Debug.Log("Server returned true, executing another method...");
+    //                ExecuteMethodIfTrue();
+    //            }
+    //            else
+    //            {
+    //                GoToAleadyDrink();
+    //            }
+    //        }
+    //    }
+    //}
 
 
     private void ExecuteMethodIfTrue()
