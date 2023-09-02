@@ -28,15 +28,13 @@ public class RegisterWindow : MonoBehaviour
     public Button advance;
 
     public float totalTime = 180;
-    public string urlExists;
     private bool resultExists;
     private float currentTime;
 
     private void Start()
     {
         advance.onClick.AddListener(()=> GetRegisterData());
-        email.onEndEdit.AddListener(ValidateEmail);
-        phone.onEndEdit.AddListener(ValidatePhone);
+        email.onValueChanged.AddListener(ValidateEmail);
     }
 
     private void OnEnable()
@@ -52,6 +50,9 @@ public class RegisterWindow : MonoBehaviour
         email.text = "";
         phone.text = "";
 
+
+        isValidEmailTxt.gameObject.SetActive(false);
+        isValidPhoneTxt.gameObject.SetActive(false);
         isValidEmail = false;
         isValidPhone = false;
     }
@@ -153,7 +154,7 @@ public class RegisterWindow : MonoBehaviour
         }
     }
 
-    private void ValidatePhone(string text)
+    public void ValidatePhone(string text)
     {
         if (!IsPhoneValid(text))
         {

@@ -7,7 +7,7 @@ public class KeyboardScript : MonoBehaviour
 {
 
     public InputField TextField;
-    public GameObject EngLayoutSml, EngLayoutBig, SymbLayout;
+    public GameObject EngLayoutSml, EngLayoutBig;
 
     public void alphabetFunction(string alphabet)
     {
@@ -31,7 +31,6 @@ public class KeyboardScript : MonoBehaviour
         //RusLayoutBig.SetActive(false);
         EngLayoutSml.SetActive(false);
         EngLayoutBig.SetActive(false);
-        SymbLayout.SetActive(false);
 
     }
 

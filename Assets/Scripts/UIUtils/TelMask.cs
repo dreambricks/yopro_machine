@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TelMask : MonoBehaviour
 {
     public InputField inputField;
-
+    public RegisterWindow registerWindow;
     private void Start()
     {
         if (inputField != null)
@@ -28,6 +28,8 @@ public class TelMask : MonoBehaviour
     {
         string cleanedInput = Regex.Replace(input, @"[^\d]", "");
         string formattedInput = Regex.Replace(cleanedInput, @"^(\d{2})(\d{5})(\d{4}).*", "($1)$2-$3");
+
+        registerWindow.ValidatePhone(inputField.text);
         return formattedInput;
     }
 
